@@ -1,0 +1,47 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class State : MonoBehaviour
+{
+    [SerializeField] private List<Transition> _transitions;
+
+    protected Hero Target { get; private set; }
+    protected Transform TargetFlyTransform { get; private set; }
+
+    public void Enter(Hero target)
+    {
+        if (enabled == false)
+        {
+            Target = target;
+            enabled = true;
+
+            foreach (var transition in _transitions)
+            {
+                transition.enabled = true;
+                transition.Init(Target);
+            }
+        }
+    }
+
+    public void Exit()
+    {
+        if(enabled == true)
+        {
+            foreach(var transition in _transitions)
+                transition.enabled = false;
+
+            enabled = false;
+        }
+    }
+
+    public State GetNext()
+    {
+        foreach(var transition in _transitions)
+        {
+            if (transition.NeedTransit)
+                return transition.TargetState;
+        }
+
+        return null;
+    }
+}
