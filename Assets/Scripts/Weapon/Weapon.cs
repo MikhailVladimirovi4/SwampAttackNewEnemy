@@ -4,11 +4,22 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] private string Label;
-    [SerializeField] private int Price;
-    [SerializeField] private Sprite Icon;
-    [SerializeField] private bool IsBuyed = false;
+    [SerializeField] private string _label;
+    [SerializeField] private int _price;
+    [SerializeField] private Sprite _icon;
+    [SerializeField] private bool _isBuyed = false;
     [SerializeField] protected Bullet Bullet;
 
+    public string Label => _label;
+    public int Price => _price;
+    public Sprite Icon => _icon;
+    public bool IsBuyed => _isBuyed;
+
+
     public abstract void Shoot(Transform shootPoint);
+
+    public void Buy()
+    {
+        _isBuyed = true;
+    }
 }

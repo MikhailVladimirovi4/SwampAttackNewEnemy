@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80954d92345999b4ab0971a2a4c41e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Label: "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
-  Price: 0
-  Icon: {fileID: 21300000, guid: 77e95174e65021143844544dc45ac0b3, type: 3}
-  IsBuyed: 1
+  _label: "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
+  _price: 1
+  _icon: {fileID: 21300000, guid: 77e95174e65021143844544dc45ac0b3, type: 3}
+  _isBuyed: 0
   Bullet: {fileID: 2233615278433773249, guid: e2737e35c4e9da846bf55a11038538fd, type: 3}

@@ -4,12 +4,15 @@ public class FireBall : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private int _damage;
+    [SerializeField] private float _angleZ;
 
     private Hero _target;
 
     public void Init( Hero target)
     {
         _target = target;
+        _target.Dying += Destroy;
+        transform.Rotate(0, 0, _angleZ);
     }
 
     private void Update()
@@ -22,8 +25,13 @@ public class FireBall : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out Hero hero))
         {
             hero.TakeDamage(_damage);
+            Destroy(gameObject);
         }
+    }
 
+    private void Destroy()
+    {
+        _target.Dying -= Destroy;
         Destroy(gameObject);
     }
 }

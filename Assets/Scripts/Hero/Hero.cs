@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Hero : MonoBehaviour
 {
@@ -11,18 +11,31 @@ public class Hero : MonoBehaviour
     private Weapon _currentWeapon;
     private int _currentHealth;
 
+    public event UnityAction Dying;
+    public event UnityAction<int, int> HealthChanged;
+
     public int Money { get; private set; }
+
+    public void BuyWeapon(Weapon weapon)
+    {
+        Money -= weapon.Price;
+        _weapons.Add(weapon);
+    }
 
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        HealthChanged?.Invoke(_currentHealth, _healt);
 
         if (_currentHealth <= 0)
+        {
             Destroy(gameObject);
+            Dying?.Invoke();
+        }
     }
-    public void AddMoney(int reward)
+    public void AddMoney(int money)
     {
-        Money += reward;
+        Money += money;
     }
 
 
@@ -34,7 +47,7 @@ public class Hero : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             _currentWeapon.Shoot(_shootPoint.transform);
         }
