@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol : Weapon
+public class ArmorBlaster : Weapon
 {
-
     public override void Shoot(Transform shootPoint)
     {
-        Instantiate(Cartrige, shootPoint.position, Quaternion.identity);
+        Cartrige rocket = Instantiate(Cartrige, shootPoint.position, Quaternion.identity);
+        rocket.Init();
     }
 }

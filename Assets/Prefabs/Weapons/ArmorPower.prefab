@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7244195767996918288
+--- !u!1 &3449988302650220343
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7712219546186943349}
-  - component: {fileID: 5767181492558630329}
+  - component: {fileID: 3449988302650220337}
+  - component: {fileID: -808388251347825523}
   m_Layer: 0
-  m_Name: Pistol
+  m_Name: ArmorPower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7712219546186943349
+--- !u!4 &3449988302650220337
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7244195767996918288}
+  m_GameObject: {fileID: 3449988302650220343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5895598, y: -1.9381595, z: -7.097159}
+  m_LocalPosition: {x: 5.54, y: -2.9699998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5767181492558630329
+--- !u!114 &-808388251347825523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7244195767996918288}
+  m_GameObject: {fileID: 3449988302650220343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80954d92345999b4ab0971a2a4c41e91, type: 3}
+  m_Script: {fileID: 11500000, guid: 19d92f95612af6943959a70c9086a1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _label: "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
-  _price: 1
-  _icon: {fileID: 21300000, guid: 77e95174e65021143844544dc45ac0b3, type: 3}
+  _label: "\u0411\u0440\u043E\u043D\u044F \"\u0445\u043C\u0435\u0442\u0430\u0413\u043D\u0443\u0442\u044C\""
+  _price: 5
+  _icon: {fileID: 21300000, guid: cb388abfd8aea69479be2794c1b11099, type: 3}
   _isBuyed: 0
-  Cartrige: {fileID: 2233615278433773249, guid: e2737e35c4e9da846bf55a11038538fd, type: 3}
+  Cartrige: {fileID: -459424325960064322, guid: ae2f497ecfa1561479f0b80941669d11, type: 3}

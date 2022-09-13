@@ -1,22 +1,22 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : Cartrige
 {
-    [SerializeField] private int _damage;
-    [SerializeField] private float _speed;
 
-    void Update()
+    private void Update()
     {
-        transform.Translate(Vector2.left * _speed * Time.deltaTime, Space.World);
+        transform.Translate(Vector2.left * Speed * Time.deltaTime, Space.World);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
-            enemy.TakeDamage(_damage);
+            enemy.TakeDamage(Damage);
         }
 
         Destroy(gameObject);
     }
+
+    public override void Init() {}
 }

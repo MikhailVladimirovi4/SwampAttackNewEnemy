@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -11,5 +9,16 @@ public class MoneyBalance : MonoBehaviour
     private void OnEnable()
     {
         _money.text = _hero.Money.ToString();
+        _hero.MoneyChanged += OnMoneyChanged;
+    }
+
+    private void OnDisable()
+    {
+        _hero.MoneyChanged -= OnMoneyChanged;
+    }
+
+    private void OnMoneyChanged(int money)
+    {
+        _money.text = money.ToString();
     }
 }
