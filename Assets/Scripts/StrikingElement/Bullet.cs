@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : Cartrige
+public class Bullet : StrikingElement
 {
 
     private void Update()

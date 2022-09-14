@@ -8,7 +8,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private int _price;
     [SerializeField] private Sprite _icon;
     [SerializeField] private bool _isBuyed = false;
-    [SerializeField] protected Cartrige Cartrige;
+    [SerializeField] protected StrikingElement StrikingElement;
 
     public string Label => _label;
     public int Price => _price;

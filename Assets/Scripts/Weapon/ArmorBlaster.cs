@@ -6,7 +6,7 @@ public class ArmorBlaster : Weapon
 {
     public override void Shoot(Transform shootPoint)
     {
-        Cartrige rocket = Instantiate(Cartrige, shootPoint.position, Quaternion.identity);
+        StrikingElement rocket = Instantiate(StrikingElement, shootPoint.position, Quaternion.identity);
         rocket.Init();
     }
 }
