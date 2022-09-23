@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Bullet : StrikingElement
 {
+    [SerializeField] private Effect _effect;
 
     private void Update()
     {
@@ -13,6 +14,7 @@ public class Bullet : StrikingElement
         if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(Damage);
+            Instantiate(_effect, transform.position, Quaternion.identity);
         }
 
         Destroy(gameObject);
